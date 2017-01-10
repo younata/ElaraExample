@@ -1,0 +1,3 @@
+[submodule "SpecDependencies/Elara"]
+	path = SpecDependencies/Elara
+	url = https://github.com/younata/elara.git
