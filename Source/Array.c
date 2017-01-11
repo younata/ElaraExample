@@ -17,5 +17,9 @@ void array_dealloc(Array *array) {
 }
 
 size_t array_count(Array *array) {
-    return 0;
+    return array->count;
+}
+
+void array_append(Array *array, void *obj) {
+    array->count += 1;
 }
