@@ -29,7 +29,7 @@ void ArrayMatchersSpec() {
                 ElaraTestResult return_value = matcher_return.evaluator(array);
                 expect(&return_value).to(equal(ElaraTestResultFail));
 
-                array_dealloc(array);
+                array_dealloc(array, NULL);
             });
 
             it("passes when a valid array is passed, and has the same count as expected", ^{
@@ -40,7 +40,7 @@ void ArrayMatchersSpec() {
                 ElaraTestResult return_value = matcher_return.evaluator(array);
                 expect(&return_value).to(equal(ElaraTestResultFail));
 
-                array_dealloc(array);
+                array_dealloc(array, NULL);
             });
         });
 
@@ -61,7 +61,7 @@ void ArrayMatchersSpec() {
                 char *return_value = matcher_return.failure_message_formatter(array, "to");
                 expect(return_value).to(equal_string("Expected Array (count 0) to have 1 element"));
 
-                array_dealloc(array);
+                array_dealloc(array, NULL);
             });
 
             it("tells the user what went wrong, even though nothing did", ^{
@@ -72,7 +72,7 @@ void ArrayMatchersSpec() {
                 char *return_value = matcher_return.failure_message_formatter(array, "to");
                 expect(return_value).to(equal_string("Expected Array (count 0) to have 0 elements"));
 
-                array_dealloc(array);
+                array_dealloc(array, NULL);
             });
         });
     });

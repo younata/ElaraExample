@@ -24,6 +24,9 @@ examplespec: $(SPEC_OBJ)
 spec: Elara examplespec
 	DYLD_LIBRARY_PATH=SpecDependencies/Elara/Elara:$(DYLD_LIBRARY_PATH) ./examplespec
 
+debugspec: Elara examplespec
+	DYLD_LIBRARY_PATH=SpecDependencies/Elara/Elara:$(DYLD_LIBRARY_PATH) lldb examplespec
+
 clean:
 	rm -rf Spec/*.o
 	rm -f examplespec

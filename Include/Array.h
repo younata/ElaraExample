@@ -8,7 +8,7 @@ struct array_s;
 typedef struct array_s Array;
 
 Array *array_init();
-void array_dealloc(Array *array);
+void array_dealloc(Array *array, void (^dealloc_block)(void *, size_t));
 
 size_t array_count(Array *array);
 
